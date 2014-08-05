@@ -33,6 +33,7 @@ function diffop(first, second) {
                 // Add
                 oi = {};
                 oi[name] = localDiff[0];
+
                 result.push({
                     p: [],
                     oi: oi
@@ -55,6 +56,7 @@ function diffop(first, second) {
                 // Delete
                 od = {};
                 od[name] = localDiff[0];
+
                 result.push({
                     p: [],
                     od: od
