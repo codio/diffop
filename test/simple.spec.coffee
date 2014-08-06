@@ -35,10 +35,10 @@ describe 'diffop', ->
 
       expected = [
         p: []
-        od: { test: { some_folder: some_file: 1 } }
+        oi: { bin: { some_folder: some_file: 1 } }
       ,
         p: []
-        oi: { bin: { some_folder: some_file: 1 } }
+        od: { test: { some_folder: some_file: 1 } }
       ]
 
       expect(diffop first, second).to.be.deep.equal expected
