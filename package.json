@@ -4,7 +4,8 @@
   "description": "Transform json diffs to ShareJS operations.",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha test/*.spec.coffee"
+    "test": "./node_modules/mocha/bin/mocha test/*.spec.coffee",
+    "bench": "node benchmark/base.js"
   },
   "author": "Friedel Ziegelmayer",
   "license": "MIT",
@@ -13,6 +14,7 @@
     "lodash": "^2.4.1"
   },
   "devDependencies": {
+    "benchmark": "^1.0.0",
     "chai": "^1.9.1",
     "coffee-script": "^1.7.1",
     "mocha": "^1.21.3"
