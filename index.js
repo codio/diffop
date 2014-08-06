@@ -4,7 +4,12 @@
 // Dependencies
 // ------------
 
-var jsondiff = require('jsondiffpatch').create();
+var jsondiff = require('jsondiffpatch').create({
+    textDiff: {
+        minLength: 1
+    }
+});
+
 var formatter = require('./lib/formatter');
 
 
