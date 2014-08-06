@@ -42,3 +42,21 @@ describe 'diffop', ->
       ]
 
       expect(diffop first, second).to.be.deep.equal expected
+
+
+  describe 'nested', ->
+    it 'insert', ->
+
+      first =
+        a: {}
+        b: {}
+      second =
+        a: test: { some_folder: { some_file: 1 } }
+        b: {}
+
+      expected = [
+        p: ['a']
+        oi: test: { some_folder: some_file: 1 }
+      ]
+
+      expect(diffop first, second).to.be.deep.equal expected
