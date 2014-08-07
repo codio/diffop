@@ -22,3 +22,19 @@ describe 'diffop - nested', ->
       b: {}
 
     evalOps first, second
+
+  it 'insert (multiple)', ->
+
+    first =
+      a: {}
+    second =
+      a:
+        test:
+          some_folder:
+            some_file: 1
+            some_other_file: 1
+            dir: {}
+        lib:
+          content: {}
+
+    evalOps first, second
