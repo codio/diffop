@@ -1,6 +1,4 @@
-diffop = require '../'
-expect = require('chai').expect
-
+evalOps = require('./helpers').evalOps
 
 describe 'diffop - nested', ->
   it 'insert', ->
@@ -12,12 +10,7 @@ describe 'diffop - nested', ->
       a: test: { some_folder: { some_file: 1 } }
       b: {}
 
-    expected = [
-      p: ['a']
-      oi: test: { some_folder: some_file: 1 }
-    ]
-
-    expect(diffop first, second).to.be.deep.equal expected
+    evalOps first, second
 
   it 'delete', ->
 
@@ -28,9 +21,4 @@ describe 'diffop - nested', ->
       a: {}
       b: {}
 
-    expected = [
-      p: ['a']
-      od: test: { some_folder: some_file: 1 }
-    ]
-
-    expect(diffop first, second).to.be.deep.equal expected
+    evalOps first, second

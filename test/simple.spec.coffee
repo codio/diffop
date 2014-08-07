@@ -1,6 +1,4 @@
-diffop = require '../'
-expect = require('chai').expect
-
+evalOps = require('./helpers').evalOps
 
 describe 'diffop - simpel', ->
   it 'insert', ->
@@ -8,36 +6,18 @@ describe 'diffop - simpel', ->
     first = {}
     second = test: { some_folder: { some_file: 1 } }
 
-    expected = [
-      p: []
-      oi: { test: { some_folder: some_file: 1 } }
-    ]
-
-    expect(diffop first, second).to.be.deep.equal expected
+    evalOps first, second
 
   it 'delete', ->
 
     first = test: { some_folder: { some_file: 1 } }
     second = {}
 
-    expected = [
-      p: []
-      od: { test: { some_folder: some_file: 1 } }
-    ]
-
-    expect(diffop first, second).to.be.deep.equal expected
+    evalOps first, second
 
   it 'move', ->
 
     first = test: { some_folder: { some_file: 1 } }
     second = bin: { some_folder: { some_file: 1 } }
 
-    expected = [
-      p: []
-      oi: { bin: { some_folder: some_file: 1 } }
-    ,
-      p: []
-      od: { test: { some_folder: some_file: 1 } }
-    ]
-
-    expect(diffop first, second).to.be.deep.equal expected
+    evalOps first, second

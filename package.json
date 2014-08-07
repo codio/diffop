@@ -17,6 +17,7 @@
     "benchmark": "^1.0.0",
     "chai": "^1.9.1",
     "coffee-script": "^1.7.1",
-    "mocha": "^1.21.3"
+    "mocha": "^1.21.3",
+    "ottypes": "^1.0.2"
   }
 }
