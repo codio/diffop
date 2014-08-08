@@ -14,7 +14,6 @@ var jsondiff = require('jsondiffpatch').create({
 var formatter = require('./lib/formatter');
 
 
-
 // diffop
 //
 // first   - Object
@@ -30,12 +29,21 @@ function diffop(first, second, debug) {
     if (debug) {
         console.log(JSON.stringify(diff, null, 2));
     }
+
     return formatter.format(diff);
 }
 
-
+// Calculate the difference between objects.
+//
+// obj - Object
+//
+// Returns a string.
 function objectHash(obj) {
     return JSON.stringify(obj);
 }
+
+
+// Export
+// ------
 
 module.exports = diffop;

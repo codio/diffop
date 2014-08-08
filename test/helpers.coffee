@@ -8,16 +8,13 @@ exports.evalOps = (left, right, debug=no) ->
   ops = diffop left, right, debug
 
   if debug
+    log 'Debug:\n'
     log left
     log right
     log ops
 
   applied = json.apply left, ops
-  #appliedInc = json.incrementalApply left, ops, (->), (->)
 
-  if debug
-
-    console.log applied
+  log applied if debug
 
   expect(applied).to.be.deep.equal right
-  #expect(appliedInc).to.be.deep.equal right
