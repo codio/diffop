@@ -5,12 +5,30 @@
 > Transform json diffs into ShareJS operations
 
 
+## Installation
+
+```bash
+$ npm install --save diffop
+```
+
 ## Usage
 
 ```js
 var diffop = require('diffop');
+var json = require('ottypes').json0;
 
-var ops = diffop(old, new);
+// Some document controlled through non ShareJS methods.
+var myDoc = /*...*/;
+
+// ShareJS JSON0 document.
+var shareDoc = /*...*/;
+
+// Generate all needed operations to bring shareDoc up to date
+// with the content of myDoc.
+var ops = diffop(shareDoc, myDoc);
+
+// Apply the operations to shareDoc
+shareDoc = json.apply(shareDoc, ops);
 ```
 
 
