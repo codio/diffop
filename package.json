@@ -1,6 +1,6 @@
 {
   "name": "diffop",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Transform json diffs to ShareJS operations.",
   "main": "index.js",
   "scripts": {
